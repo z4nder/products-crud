@@ -64,7 +64,7 @@ Tabela no plural e Model no singular
     php artisan make:model Product
 ```
 
-# Os campos no banco serão:
+## Os campos no banco serão:
     String name Nome 
     float 8,2 price Preço
     float 8,2 weight Peso
@@ -72,14 +72,36 @@ Tabela no plural e Model no singular
     boolean is_available disponivel
 
 
-# Declarando o fillable
+## Declarando o fillable
 ```
     protected $fillable = [
         'name', 'price', 'weight', 'stock_quantity', 'is_available'
     ];
 ```
 
-# Criando o Controller
+## Criando o Controller
 ```
     php artisan make:controller ProductController --api
 ```
+
+## Adicione as rota
+```
+    Route::group(['namespace'=>'App\Http\Controllers' ,'prefix' => '/products'], function () {
+        Route::post('/', array('as' => 'storeProduct', 'uses' => 'ProductController@store'));
+    });
+```
+
+# Extra
+## Adicione FormRequests
+```
+   php artisan make:request ProductStoreRequest
+   php artisan make:request ProductUpdateRequest
+```
+
+## Adicione Resources FormRequests
+```
+   php artisan make:resource ProductResource
+```
+
+
+## Agora Vamos Implementar as regras de negocio no controller

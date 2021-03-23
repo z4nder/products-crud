@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price', 8, 2);
-            $table->decimal('weight', 8, 2);
+            $table->decimal('weight', 8, 2)->nullable();
             $table->boolean('is_available')->default(true);
             $table->timestamps();
         });

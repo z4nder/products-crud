@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace'=>'App\Http\Controllers' ,'prefix' => '/products'], function () {
+    Route::get('/', array('as' => 'indexProduct', 'uses' => 'ProductController@index'));
+    Route::post('/', array('as' => 'storeProduct', 'uses' => 'ProductController@store'));
+});
