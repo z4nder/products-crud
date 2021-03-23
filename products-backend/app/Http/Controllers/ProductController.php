@@ -13,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return $products;
     }
 
     /**
@@ -44,7 +45,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return $product;
     }
 
     /**
@@ -56,7 +58,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->weight = $request->weight;
+        $product->is_available = $request->is_available;
+
+        $product->save();
+
+        return $product;
     }
 
     /**
@@ -67,6 +78,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
     }
 }

@@ -84,12 +84,19 @@ Tabela no plural e Model no singular
     php artisan make:controller ProductController --api
 ```
 
-## Adicione as rota
-```
-    Route::group(['namespace'=>'App\Http\Controllers' ,'prefix' => '/products'], function () {
-        Route::post('/', array('as' => 'storeProduct', 'uses' => 'ProductController@store'));
+## Adicione as rotas
+``` 
+    Route::prefix('products')->group(function () {
+        Route::get('', [ProductController::class, 'index']);
+        Route::get('{id}', [ProductController::class, 'show']);
+        Route::post('', [ProductController::class, 'store']);
+        Route::put('{id}', [ProductController::class, 'update']);
+        Route::delete('{id}', [ProductController::class, 'destroy']);
     });
 ```
+
+
+## Agora é só implementar as regras de negocio no Controller
 
 # Extra
 ## Adicione FormRequests
@@ -102,6 +109,3 @@ Tabela no plural e Model no singular
 ```
    php artisan make:resource ProductResource
 ```
-
-
-## Agora Vamos Implementar as regras de negocio no controller
