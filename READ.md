@@ -56,6 +56,30 @@ Precisamos copiar o arquivo  .env.example e criar com o nome .env, com o arquivo
 - [ResourceResponse](https://laravel.com/docs/8.x/eloquent-resources#introduction)
 
 ## Migration e Model
+Tabela no plural e Model no singular
+```
+    php artisan make:migration create_products_table
+```
+```
+    php artisan make:model Product
 ```
 
+# Os campos no banco serão:
+    String name Nome 
+    float 8,2 price Preço
+    float 8,2 weight Peso
+    number stock_quantity Quantidade em Estoque
+    boolean is_available disponivel
+
+
+# Declarando o fillable
+```
+    protected $fillable = [
+        'name', 'price', 'weight', 'stock_quantity', 'is_available'
+    ];
+```
+
+# Criando o Controller
+```
+    php artisan make:controller ProductController --api
 ```
