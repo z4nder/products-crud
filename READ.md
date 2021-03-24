@@ -1,4 +1,4 @@
-# [Laravel API - BackEnd](https://tiagomatos.com/lp/curso-laravel-api-vue-js-spa/)
+# Laravel API - BackEnd
 
 ## [Documentação Official do Laravel](https://laravel.com/docs/8.x)
 
