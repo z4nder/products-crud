@@ -9,9 +9,6 @@
  - Ter o MYSQL Instalado
  - Ter o Insomnia Instalado
 
-###  ADICONAR VIDEO OU TEXTO SOBRE COMO FAZER O SETUP
-
-
 # Vamos Começar
 
 ## Criando projeto
@@ -103,6 +100,12 @@ Tabela no plural e Model no singular
 ```
    php artisan make:request ProductStoreRequest
    php artisan make:request ProductUpdateRequest
+```
+
+## HEADERS para o Insomnia
+```
+    Accept application/json
+    Content-Type application/json
 ```
 
 ## Adicione Resources FormRequests

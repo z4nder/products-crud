@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Http\Requests\ProductStoreRequest;
+use App\Http\Requests\ProductUpdateRequest;
+
 class ProductController extends Controller
 {
     /**
@@ -20,10 +23,10 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\ProductStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
         $product = new Product();
 
@@ -36,6 +39,26 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function store(Request $request)
+    // {
+    //     $product = new Product();
+
+    //     $product->name = $request->name;
+    //     $product->price = $request->price;
+    //     $product->weight = $request->weight;
+    //     $product->is_available = $request->is_available;
+
+    //     $product->save();
+
+    //     return $product;
+    // }
 
     /**
      * Display the specified resource.
@@ -52,11 +75,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\ProductUpdateRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    */
+    public function update(ProductUpdateRequest $request, $id)
     {
         $product = Product::findOrFail($id);
 
@@ -69,6 +92,27 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, $id)
+    // {
+    //     $product = Product::findOrFail($id);
+
+    //     $product->name = $request->name;
+    //     $product->price = $request->price;
+    //     $product->weight = $request->weight;
+    //     $product->is_available = $request->is_available;
+
+    //     $product->save();
+
+    //     return $product;
+    // }
 
     /**
      * Remove the specified resource from storage.
