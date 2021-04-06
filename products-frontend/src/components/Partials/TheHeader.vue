@@ -44,7 +44,7 @@
                     Gustavo Silva
                 </template>
 
-                <TwDropdownItem :to="{ name: 'profile' }">
+                <TwDropdownItem >
                     <svg
                         class="mr-3 h-5 w-5 text-gray-500 group-hover:text-gray-500 group-focus:text-gray-500"
                         viewBox="0 0 24 24"
@@ -69,7 +69,7 @@
                     Meu perfil
                 </TwDropdownItem>
 
-                <TwDropdownItem :to="{ name: 'logout' }">
+                <TwDropdownItem >
                     <svg
                         class="mr-3 h-5 w-5 text-gray-500 group-hover:text-gray-500 group-focus:text-gray-500"
                         viewBox="0 0 24 24"
