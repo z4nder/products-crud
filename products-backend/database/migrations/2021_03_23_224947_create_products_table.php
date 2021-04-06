@@ -16,6 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+
+            $table->integer('stock');
             $table->decimal('price', 8, 2);
             $table->decimal('weight', 8, 2)->nullable();
             $table->boolean('is_available')->default(true);

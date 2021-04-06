@@ -25,6 +25,7 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:products|min:3|max:255',
+            'stock' => 'required|between:0,500',
             'price' => 'required|between:0,300.99',
             'weight' => 'nullable|between:0,99.99'
         ];

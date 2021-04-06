@@ -31,6 +31,7 @@ class ProductControllerOld extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->weight = $request->weight;
+        $product->stock = $request->stock;
         $product->is_available = $request->is_available;
 
         $product->save();
@@ -64,6 +65,7 @@ class ProductControllerOld extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->weight = $request->weight;
+        $product->stock = $request->stock;
         $product->is_available = $request->is_available;
 
         $product->save();

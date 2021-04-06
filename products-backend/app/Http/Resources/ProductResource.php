@@ -20,6 +20,7 @@ class ProductResource extends JsonResource
             'price' => (float) $this->price,
             'formate_price' => (string) "R$ ".$this->price,
             'weight' => (float) $this->weight,
+            'stock' => (integer) $this->stock,
             'formate_weight' => (string) $this->weight." KG",
             'is_available' => (boolean) $this->is_available,
             'created_at' => (string) $this->created_at,

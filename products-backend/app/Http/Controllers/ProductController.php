@@ -29,16 +29,10 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        $product = new Product();
+        $input = $request->validated();
+        $product = Product::create($input);
 
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->weight = $request->weight;
-        $product->is_available = $request->is_available;
-
-        $product->save();
-
-        return $product;
+        return new ProductResource($product);
     }
 
     /**
@@ -66,6 +60,7 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->price = $request->price;
+        $product->stock = $request->stock;
         $product->weight = $request->weight;
         $product->is_available = $request->is_available;
 
