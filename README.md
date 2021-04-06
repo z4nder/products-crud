@@ -48,9 +48,9 @@ Precisamos copiar o arquivo .env.example e criar com o nome .env, com o arquivo 
 
 - [Rotas](https://laravel.com/docs/8.x/routing)
 - [Controllers](https://laravel.com/docs/8.x/controllers)
-- [Request](https://laravel.com/docs/8.x/requests#accessing-the-request)
-- [Response](https://laravel.com/docs/8.x/requests#accessing-the-request)
-- [FormRequest](https://laravel.com/docs/8.x/requests#accessing-the-request)
+- [Request](https://laravel.com/docs/8.x/requests)
+- [Response](https://laravel.com/docs/8.x/responses)
+- [FormRequest](https://laravel.com/docs/8.x/validation#form-request-validation)
 - [ResourceResponse](https://laravel.com/docs/8.x/eloquent-resources#introduction)
 
 ## Migration e Model
