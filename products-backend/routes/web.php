@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/teste', function () {
+    return "Hello World! 👨🏻‍💻";
+});
+
+Route::get('/random_number/{limit}', function ($limit) {
+    return rand(0, $limit);
+});

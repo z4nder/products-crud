@@ -43,15 +43,34 @@ Precisamos copiar o arquivo .env.example e criar com o nome .env, com o arquivo 
 
 ## Conceitos que vamos trabalhar no Laravel
 
+- [Rotas](https://laravel.com/docs/8.x/routing)
+- [Controllers](https://laravel.com/docs/8.x/controllers)
+
 - [Models](https://laravel.com/docs/8.x/eloquent#generating-model-classes)
 - [Migrations](https://laravel.com/docs/8.x/migrations#introduction)
 
-- [Rotas](https://laravel.com/docs/8.x/routing)
-- [Controllers](https://laravel.com/docs/8.x/controllers)
 - [Request](https://laravel.com/docs/8.x/requests)
 - [Response](https://laravel.com/docs/8.x/responses)
 - [FormRequest](https://laravel.com/docs/8.x/validation#form-request-validation)
 - [ResourceResponse](https://laravel.com/docs/8.x/eloquent-resources#introduction)
+
+## Adicione as rotas
+
+```
+    Route::prefix('products')->group(function () {
+        Route::get('', [ProductController::class, 'productIndex']);
+        Route::get('{id}', [ProductController::class, 'show']);
+        Route::post('', [ProductController::class, 'store']);
+        Route::put('{id}', [ProductController::class, 'update']);
+        Route::delete('{id}', [ProductController::class, 'destroy']);
+    });
+```
+
+## Criando o Controller
+
+```
+    php artisan make:controller ProductController --api
+```
 
 ## Migration e Model
 
@@ -81,25 +100,7 @@ Tabela no plural e Model no singular
     ];
 ```
 
-## Criando o Controller
-
-```
-    php artisan make:controller ProductController --api
-```
-
-## Adicione as rotas
-
-```
-    Route::prefix('products')->group(function () {
-        Route::get('', [ProductController::class, 'index']);
-        Route::get('{id}', [ProductController::class, 'show']);
-        Route::post('', [ProductController::class, 'store']);
-        Route::put('{id}', [ProductController::class, 'update']);
-        Route::delete('{id}', [ProductController::class, 'destroy']);
-    });
-```
-
-## Agora é só implementar as regras de negocio no Controller
+## Agora é implementar as regras de negocio no Controller
 
 # Refatorando
 
@@ -121,4 +122,12 @@ Tabela no plural e Model no singular
 
 ```
    php artisan make:resource ProductResource
+```
+
+## Monstando o Faker e Seeder
+
+```
+   php artisan make:factory ProductFactory
+   php artisan make:seeder ProductSeeder
+   php artisan migrate:fresh --seed
 ```
